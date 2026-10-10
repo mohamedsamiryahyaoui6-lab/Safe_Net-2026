@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SafeNet : apprends à reconnaître les dangers d’Internet et à naviguer en sécurité.">
+<title>SafeNet — Les dangers d'Internet</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#030d25;--panel:#071a3b;--panel2:#0b2450;--line:#123d79;--blue:#1688ff;--cyan:#35d8ff;--text:#f4f8ff;--muted:#b6c8e6;--purple:#b95cff;--green:#10d6aa;--orange:#ffb12b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#0b2450 0%,var(--bg) 48%);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.site-header{max-width:1240px;margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #153663}.logo{font-weight:800;font-size:1.25rem;display:flex;align-items:center;gap:9px;white-space:nowrap}.shield{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:linear-gradient(145deg,#1da4ff,#1453d8);box-shadow:0 0 22px #1688ff55}.nav{display:flex;gap:25px;align-items:center}.nav a{color:#c3d3ed;font-size:.87rem;transition:.2s}.nav a:hover,.nav a.active{color:var(--cyan)}.nav a.active:after{content:"";display:block;height:2px;background:var(--cyan);margin-top:7px}.menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;border-radius:8px;padding:5px 10px;font-size:1.2rem}
+.hero{max-width:1180px;margin:38px auto 30px;padding:25px 28px;display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:45px;min-height:385px}.hero-art{position:relative;min-height:340px;border:1px solid #164b93;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#0a2a63,#04132f 75%);display:flex;align-items:center;justify-content:center}.hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49%,#138aff13 50%),linear-gradient(0deg,transparent 49%,#138aff13 50%);background-size:35px 35px;mask-image:linear-gradient(to bottom,transparent,#000)}.glow{position:absolute;width:230px;height:230px;background:#057bff44;filter:blur(50px);border-radius:50%}.cartoon{z-index:1;font-size:9rem;filter:drop-shadow(0 10px 16px #0008);animation:float 3s ease-in-out infinite}.laptop{position:absolute;bottom:42px;right:45px;width:130px;height:74px;border:2px solid #1688ff;border-radius:9px;background:#071c3e;display:grid;place-items:center;font-size:2.4rem;box-shadow:0 0 25px #1688ff66;transform:perspective(200px) rotateY(-8deg)}.spark{position:absolute;color:var(--cyan);font-size:2rem}.s1{top:35px;right:70px}.s2{bottom:85px;left:50px}.eyebrow{color:var(--cyan);font-weight:700;font-size:.76rem;letter-spacing:.16em}.hero h1{font-size:clamp(2.6rem,5vw,4.3rem);line-height:1.05;letter-spacing:-.05em;margin:12px 0 20px}.hero h1 span{color:#65adff}.hero-copy>p:not(.eyebrow){max-width:520px;color:var(--muted);font-size:1.02rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;border:0;border-radius:999px;padding:12px 21px;background:linear-gradient(100deg,#078bff,#1765f5);color:white;font-weight:700;font-size:.9rem;cursor:pointer;box-shadow:0 8px 25px #0878ff33;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}.btn-secondary{background:#10294e;border:1px solid #24528a;box-shadow:none}.quick-grid{max-width:1125px;margin:20px auto 65px;padding:0 25px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.quick-card{background:#061a39;border:1px solid #16437e;border-radius:13px;padding:19px;display:flex;flex-direction:column;gap:6px;transition:.2s}.quick-card:hover,.info-card:hover{transform:translateY(-4px);border-color:#218eff}.quick-icon{font-size:2rem;color:#42b8ff}.quick-card b{font-size:.95rem}.quick-card small{color:var(--muted);font-size:.78rem}.section{max-width:1080px;margin:0 auto;padding:0 25px 70px}.section-heading{text-align:center;margin-bottom:25px}.section-heading h2,.page-title h1{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:7px 0 12px}.section-heading p:not(.eyebrow),.page-title>p:last-child{color:var(--muted)}.two-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.info-card{padding:24px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#0a2147,#06142f);transition:.2s}.big-icon{font-size:2.3rem}.info-card p{color:var(--muted)}.text-link{color:var(--cyan);font-weight:700}.page{max-width:1120px;margin:0 auto;padding:48px 25px 75px}.page-title{text-align:center;margin:10px auto 38px;max-width:720px}.page-title h1{margin-top:10px}.risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.risk-card{padding:24px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#0a2045,#07132c)}.risk-icon{font-size:2.3rem;margin-bottom:8px}.risk-card h2{font-size:1.25rem;margin:0 0 8px}.risk-card p,.risk-tip{color:var(--muted)}.risk-tip{border-top:1px solid #ffffff18;margin-top:18px;padding-top:14px;font-size:.9rem}.risk-tip b{color:var(--text)}.purple{border-color:#7e39c8}.violet{border-color:#623de0}.orange{border-color:#b87920}.green{border-color:#0c9f85}.notice{margin:25px 0 0;display:flex;align-items:center;gap:14px;padding:17px 20px;border:1px solid #1766a2;border-radius:13px;background:#08264b}.notice>span{font-size:1.7rem}.notice p{margin:0;color:#d3e4ff}.tips-list{display:grid;gap:13px;max-width:850px;margin:auto}.tip{display:flex;gap:17px;padding:20px;border:1px solid var(--line);background:#071a38;border-radius:14px}.tip-icon{font-size:2rem;min-width:44px}.tip h2{font-size:1.08rem;margin:0 0 4px}.tip p{margin:0;color:var(--muted)}.center{text-align:center;margin-top:30px}.animation-card{max-width:900px;margin:auto;border:1px solid #1d5ba2;background:#061733;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px #0003}.scene{position:relative;height:360px;overflow:hidden;background:linear-gradient(180deg,#132b55,#6b422f 62%,#1b2339);display:flex;align-items:flex-end;justify-content:center}.scene:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0004 1px,transparent 1px),linear-gradient(#0004 1px,transparent 1px);background-size:45px 45px;opacity:.4}.scene-stars{position:absolute;top:20px;left:25px;color:#c9e9ff;font-size:1.4rem}.room-window{position:absolute;top:26px;right:7%;width:190px;height:145px;border:9px solid #513b3b;background:linear-gradient(#17345b,#a15e4a);box-shadow:0 0 0 2px #241c2d}.room-window span{position:absolute;right:16px;top:10px;color:#ffe7a0;font-size:2rem}.desk{position:absolute;bottom:0;width:100%;height:85px;background:linear-gradient(#593b2e,#302b38);border-top:7px solid #916047}.story-character{position:absolute;bottom:62px;left:25%;font-size:7rem;z-index:2;filter:drop-shadow(0 5px 4px #0006);animation:float 3s ease-in-out infinite}.computer{position:absolute;bottom:62px;left:47%;font-size:5rem;z-index:3}.chat-bubble{position:absolute;top:95px;left:45%;z-index:4;max-width:270px;padding:14px 17px;background:#f0f6ff;color:#102343;border-radius:15px;font-size:.9rem;box-shadow:0 7px 25px #0005;animation:pop .35s ease-out}.chat-bubble:after{content:"";position:absolute;left:25px;bottom:-10px;border-width:10px 10px 0 0;border-style:solid;border-color:#f0f6ff transparent transparent transparent}.scene-label{position:absolute;bottom:14px;left:18px;z-index:4;color:#fff;font-size:.8rem;font-weight:700;text-shadow:0 2px 5px #000}.story-controls{padding:22px}.story-progress,.quiz-progress{height:6px;background:#142b4b;border-radius:9px;overflow:hidden}.story-progress span,.quiz-progress span{display:block;height:100%;width:20%;background:linear-gradient(90deg,#08aaff,#48e0ff);transition:width .3s}.dialogue{min-height:54px;font-size:1.02rem}.control-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.small-note{font-size:.75rem;color:#7f9cc5;margin-bottom:0}.quiz-card{max-width:700px;margin:auto;padding:26px;border:1px solid #1a5595;border-radius:18px;background:linear-gradient(145deg,#0a2147,#06142e)}.quiz-top,.quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;color:var(--muted);font-size:.88rem}.quiz-bubble{width:38px;height:38px;border-radius:12px;background:#147ce6;color:#fff;display:grid;place-items:center;font-size:1.4rem;font-weight:800}.quiz-progress{margin:16px 0 24px}.quiz-card h2{font-size:1.3rem;margin-bottom:20px}.answers{display:grid;gap:10px}.answer{width:100%;text-align:left;border:1px solid #214574;border-radius:11px;padding:13px 15px;background:#081a37;color:#eaf3ff;cursor:pointer}.answer:hover{border-color:#1688ff}.answer.correct{border-color:#0dd2a5;background:#063b3a}.answer.wrong{border-color:#ff647c;background:#451c32}.feedback{min-height:26px;color:var(--cyan);font-size:.9rem}.quiz-footer{border-top:1px solid #19385f;padding-top:17px}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.about-card{display:flex;align-items:center;gap:24px;padding:28px;border:1px solid var(--line);border-radius:16px;background:#071a38}.about-icon{font-size:4rem}.about-card p{color:var(--muted);margin-bottom:0}.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}.values-grid article{text-align:center;padding:20px 12px;border:1px solid var(--line);border-radius:14px;background:#071a38}.values-grid article span{font-size:2rem}.values-grid h3{margin:8px 0 4px}.values-grid p{color:var(--muted);font-size:.86rem;margin:0}.contact-box{text-align:center;padding:25px;border:1px solid #14528f;border-radius:16px;background:linear-gradient(120deg,#082750,#071936)}.contact-box p{color:var(--muted);margin-bottom:22px}footer{border-top:1px solid #14345d;max-width:1180px;margin:auto;padding:22px 28px 30px;display:flex;align-items:center;justify-content:space-between;gap:15px;color:#89a4cb;font-size:.8rem}footer span:first-child{font-weight:800;color:#eaf4ff}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+@media(max-width:800px){.nav{gap:12px}.nav a{font-size:.76rem}.hero{gap:25px}.hero-art{min-height:290px}.cartoon{font-size:7rem}.quick-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.site-header{padding:14px 18px;flex-wrap:wrap}.menu-toggle{display:block}.nav{display:none;order:3;width:100%;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:10px 4px;border-top:1px solid #17345a;font-size:.9rem}.nav a.active:after{display:none}.hero{grid-template-columns:1fr;padding:15px 18px;margin-top:18px}.hero-art{min-height:240px;order:2}.hero-copy{order:1}.hero h1{font-size:3rem}.quick-grid{padding:0 18px;margin-bottom:45px}.two-cards,.risk-grid{grid-template-columns:1fr}.page{padding:35px 18px 55px}.page-title{margin-bottom:28px}.scene{height:300px}.story-character{font-size:5rem;left:13%}.computer{font-size:3.7rem;left:42%}.chat-bubble{left:35%;top:90px;max-width:220px;font-size:.78rem}.room-window{width:145px;height:115px}.story-controls{padding:17px}.control-row .btn{flex:1}.values-grid{grid-template-columns:repeat(2,1fr)}.about-card{align-items:flex-start;gap:12px;padding:20px}.about-icon{font-size:2.8rem}footer{padding:20px;flex-direction:column;align-items:flex-start;gap:7px}}
+
+.creator-card{display:grid;grid-template-columns:minmax(220px,330px) 1fr;gap:30px;align-items:center;max-width:900px;margin:0 auto 28px;padding:24px;border:1px solid #1a5595;border-radius:18px;background:linear-gradient(145deg,#0a2147,#06142e)}
+.creator-photo{display:block;width:100%;height:340px;object-fit:cover;object-position:center 30%;border-radius:13px;border:1px solid #2364a5}
+.creator-details h2{font-size:2rem;margin:0 0 12px}.creator-details p:not(.eyebrow){color:var(--muted)}.creator-motto{font-weight:700;color:var(--cyan)!important;font-style:italic;margin-top:20px}
+.video-player{max-width:900px;margin:0 auto 24px;padding:12px;border:1px solid #1a5595;border-radius:18px;background:#061733}.video-player video{display:block;width:100%;border-radius:12px;background:#020817}.video-caption{color:var(--muted);font-size:.85rem;padding:8px 5px 2px}
+@media(max-width:620px){.creator-card{grid-template-columns:1fr;padding:16px}.creator-photo{height:300px;max-width:340px;margin:auto}.creator-details h2{text-align:center}}
+
+/* Styles pour le site regroupé dans une seule page */
+html { scroll-padding-top: 20px; }
+section[id] { scroll-margin-top: 24px; }
+.nav a { white-space: nowrap; }
+.nav a.active:after { display: none; }
+.nav a.active { color: var(--cyan); }
+.section, .page { scroll-margin-top: 20px; }
+.creator-card { grid-template-columns: minmax(220px,330px) 1fr; }
+#home, #dangers, #video, #conseils, #quiz, #apropos { display: block; }
+.result-message { color: var(--cyan); font-weight: 700; margin-top: 12px; }
+@media(max-width:620px) {
+  .nav a { white-space: normal; }
+  .hero { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="#home" aria-label="SafeNet, accueil"><span class="shield">✓</span> SafeNet</a>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="active" href="#home">Accueil</a>
+    <a href="#dangers">Les dangers</a>
+    <a href="#video">Vidéo</a>
+    <a href="#conseils">Conseils</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#apropos">Créateur</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-art">
+    <div class="glow"></div><div class="cartoon teen">🧑🏻‍💻</div><div class="laptop">🛡️</div>
+    <span class="spark s1">✦</span><span class="spark s2">✦</span>
+  </div>
+  <div class="hero-copy">
+    <p class="eyebrow">RESTE CONNECTÉ, RESTE PROTÉGÉ</p>
+    <h1>Les dangers<br><span>d’Internet</span></h1>
+    <p>Internet est un outil incroyable, mais il peut aussi être dangereux. Découvre les principaux risques et apprends à naviguer en toute sécurité.</p>
+    <a class="btn" href="#dangers">Découvrir les risques <span>→</span></a>
+  </div>
+</section>
+
+<section class="quick-grid" aria-label="Accès rapides">
+  <a class="quick-card" href="#dangers"><span class="quick-icon">♢</span><b>Sois prudent</b><small>Reconnais les risques en ligne.</small></a>
+  <a class="quick-card" href="#conseils"><span class="quick-icon">◉</span><b>Protège tes infos</b><small>Garde tes données privées.</small></a>
+  <a class="quick-card" href="#apropos"><span class="quick-icon">♧</span><b>Parle à tes proches</b><small>Demande de l’aide si besoin.</small></a>
+  <a class="quick-card" href="#conseils"><span class="quick-icon">♙</span><b>Utilise Internet en sécurité</b><small>Adopte les bons réflexes.</small></a>
+</section>
+
+<section class="section" id="intro">
+  <div class="section-heading">
+    <p class="eyebrow">APPRENDS À TE PROTÉGER</p>
+    <h2>Un clic peut tout changer.</h2>
+    <p>Quelques bons réflexes suffisent pour profiter du web plus sereinement.</p>
+  </div>
+  <div class="two-cards">
+    <article class="info-card"><span class="big-icon">🕵️</span><h3>Tu as un doute ?</h3><p>Ne réponds pas aux messages suspects et ne clique pas sur les liens inconnus.</p><a class="text-link" href="#conseils">Voir les conseils →</a></article>
+    <article class="info-card"><span class="big-icon">🎬</span><h3>Découvre l’histoire de Sami</h3><p>Une courte animation interactive montre comment réagir face à un inconnu en ligne.</p><a class="text-link" href="#video">Lancer l’histoire →</a></article>
+  </div>
+</section>
+
+<section class="page" id="dangers">
+  <div class="page-title"><p class="eyebrow">MIEUX LES CONNAÎTRE POUR LES ÉVITER</p><h1>Les dangers d’Internet</h1><p>Voici quatre risques importants à reconnaître.</p></div>
+  <div class="risk-grid">
+    <article class="risk-card purple"><div class="risk-icon">👥</div><h2>Le cyberharcèlement</h2><p>Des insultes, des moqueries ou des menaces répétées en ligne peuvent faire beaucoup de mal.</p><div class="risk-tip"><b>Que faire ?</b> Garde les preuves, bloque la personne et parle à un adulte de confiance.</div></article>
+    <article class="risk-card violet"><div class="risk-icon">🪪</div><h2>Le vol d’informations personnelles</h2><p>Un inconnu peut essayer d’obtenir ton adresse, ton mot de passe, ton numéro ou tes photos.</p><div class="risk-tip"><b>Que faire ?</b> Ne partage jamais ces informations avec des inconnus.</div></article>
+    <article class="risk-card orange"><div class="risk-icon">🎭</div><h2>Les arnaques en ligne</h2><p>De faux messages ou de fausses offres peuvent chercher à voler de l’argent ou des comptes.</p><div class="risk-tip"><b>Que faire ?</b> Vérifie la source et demande conseil avant de cliquer ou de payer.</div></article>
+    <article class="risk-card green"><div class="risk-icon">⏳</div><h2>Le temps d’écran excessif</h2><p>Passer trop de temps en ligne peut perturber le sommeil, les devoirs et les activités.</p><div class="risk-tip"><b>Que faire ?</b> Fais des pauses et garde du temps pour tes amis, ta famille et tes loisirs.</div></article>
+  </div>
+  <div class="notice"><span>💡</span><p><b>À retenir :</b> si une situation te met mal à l’aise, arrête la conversation et parle à un adulte de confiance.</p></div>
+</section>
+
+<section class="page" id="video">
+  <div class="page-title"><p class="eyebrow">UNE HISTOIRE POUR APPRENDRE</p><h1>Le piège d’Internet</h1><p>Une courte animation en français sur la prudence en ligne.</p></div>
+  <section class="video-player">
+    <video controls playsinline poster="C:\Users\samir\Downloads\1 er projet\histoire-sami.png">
+      <source src="C:\Users\samir\Downloads\1 er projet\histoire-sami.mp4" type="video/mp4">
+      Votre navigateur ne prend pas en charge la vidéo.
+    </video>
+    <p class="video-caption">Histoire de Sami — reconnaître un message suspect et demander de l’aide.</p>
+  </section>
+  <section class="animation-card">
+    <div class="scene" id="scene"><div class="scene-stars">✦　✧　✦</div><div class="room-window"><span>☾</span></div><div class="desk"></div><div class="story-character" id="character">🧑🏻‍💻</div><div class="computer">💻</div><div class="chat-bubble" id="chatBubble">Salut Sami !</div><div class="scene-label" id="sceneLabel">Scène 1 — Une nouvelle rencontre</div></div>
+    <div class="story-controls">
+      <div class="story-progress"><span id="progressBar"></span></div>
+      <p class="dialogue" id="dialogue">Sami joue en ligne après ses devoirs. Un nouveau joueur lui envoie un message.</p>
+      <div class="control-row"><button class="btn btn-secondary" id="restartStory">↺ Recommencer</button><button class="btn" id="nextScene">Scène suivante →</button></div>
+      <p class="small-note">Parcours les scènes interactives pour découvrir les bons réflexes.</p>
+    </div>
+  </section>
+  <div class="notice"><span>🛡️</span><p><b>La bonne réaction :</b> ne partage pas tes informations personnelles, bloque les comptes suspects et parle à un adulte de confiance.</p></div>
+</section>
+
+<section class="page" id="conseils">
+  <div class="page-title"><p class="eyebrow">LES BONS RÉFLEXES</p><h1>Nos conseils</h1><p>Quelques règles simples pour naviguer en toute sécurité.</p></div>
+  <div class="tips-list">
+    <article class="tip"><span class="tip-icon">🔒</span><div><h2>Ne partage pas tes informations personnelles</h2><p>Ne donne pas ton adresse, ton numéro de téléphone, tes mots de passe ou des photos privées à des inconnus.</p></div></article>
+    <article class="tip"><span class="tip-icon">🧑‍🤝‍🧑</span><div><h2>Parle à un adulte de confiance</h2><p>Si un message ou une personne te met mal à l’aise, raconte ce qui se passe à un parent, un enseignant ou un autre adulte de confiance.</p></div></article>
+    <article class="tip"><span class="tip-icon">🛡️</span><div><h2>Sois prudent avec les inconnus</h2><p>Un profil peut être faux. N’accepte pas toutes les demandes et ne rencontre jamais seul quelqu’un connu uniquement en ligne.</p></div></article>
+    <article class="tip"><span class="tip-icon">⏰</span><div><h2>Gère ton temps d’écran</h2><p>Fais des pauses, protège ton sommeil et garde du temps pour le sport, les loisirs et les proches.</p></div></article>
+    <article class="tip"><span class="tip-icon">🔗</span><div><h2>Vérifie avant de cliquer</h2><p>Méfie-toi des cadeaux incroyables, des liens inconnus et des messages qui te pressent d’agir vite.</p></div></article>
+  </div>
+  <div class="center"><a class="btn" href="#quiz">Tester mes connaissances →</a></div>
+</section>
+
+<section class="page" id="quiz">
+  <div class="page-title"><p class="eyebrow">À TOI DE JOUER</p><h1>Teste tes connaissances</h1><p>Réponds aux questions pour voir si tu connais les bons réflexes.</p></div>
+  <section class="quiz-card">
+    <div class="quiz-top"><span class="quiz-bubble">?</span><span id="questionCount">Question 1 / 5</span></div>
+    <div class="quiz-progress"><span id="quizProgress"></span></div>
+    <h2 id="questionText">Un inconnu te demande ton mot de passe. Que fais-tu ?</h2>
+    <div id="answers" class="answers"></div><p id="feedback" class="feedback" aria-live="polite"></p>
+    <div class="quiz-footer"><span id="scoreLabel">Score : 0</span><button class="btn" id="quizNext" disabled>Suivant →</button></div>
+    <p id="quizResult" class="result-message" aria-live="polite"></p>
+  </section>
+</section>
+
+<section class="page" id="apropos">
+  <div class="page-title"><p class="eyebrow">À PROPOS DU PROJET</p><h1>Le créateur du site</h1><p>Un projet scolaire pour sensibiliser aux dangers d’Internet.</p></div>
+  <section class="creator-card">
+    <img class="creator-photo" src="C:\Users\samir\Downloads\1 er projet\smayer.jpg" alt="Photo du créateur Smayer">
+    <div class="creator-details"><p class="eyebrow">CRÉATEUR DE SAFENET</p><h2>Smayer</h2><p>Je m’appelle Smayer et je suis élève en première année secondaire à l’Institut Ben Arous Marsa.</p><p>J’ai créé ce site pour sensibiliser les gens, en particulier les jeunes, aux dangers d’Internet et leur apprendre à protéger leurs informations personnelles.</p><p class="creator-motto">« Sur Internet, réfléchis avant de cliquer ! »</p></div>
+  </section>
+  <section class="contact-box"><h2>Mon objectif</h2><p>Informer, prévenir et encourager chacun à utiliser Internet de manière responsable et sécurisée.</p><a class="btn" href="#home">Retour à l’accueil</a></section>
+</section>
+</main>
+
+<footer><span>🛡️ SafeNet</span><span>Internet est un outil, pas un danger… à condition de bien l’utiliser !</span><span>Projet éducatif</span></footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const opened = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(opened));
+    });
+  }
+  if (nav) {
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      nav.querySelectorAll("a").forEach(a => a.classList.remove("active"));
+      link.classList.add("active");
+    }));
+  }
+
+  const story = [
+    {label:"Scène 1 — Une nouvelle rencontre", bubble:"Salut Sami ! Tu joues souvent à ce jeu ?", text:"Sami joue en ligne après ses devoirs. Un nouveau joueur lui envoie un message."},
+    {label:"Scène 2 — Une demande étrange", bubble:"Envoie-moi ton adresse et une photo !", text:"L’inconnu demande des informations personnelles. Sami comprend que cette demande est risquée."},
+    {label:"Scène 3 — Sami réfléchit", bubble:"Je ne te connais pas. Je ne partagerai pas mes infos.", text:"Sami ne donne aucune information. Il arrête la conversation et ne clique sur aucun lien."},
+    {label:"Scène 4 — Il demande de l’aide", bubble:"Un compte m’a demandé mon adresse.", text:"Sami en parle à un parent. Ensemble, ils bloquent le compte et signalent le message."},
+    {label:"Scène 5 — Le bon réflexe !", bubble:"Merci de m’avoir prévenu. Tu as bien réagi !", text:"Sami a appris la leçon : protéger ses informations, bloquer les comptes suspects et parler à un adulte."}
+  ];
+  const scene = document.getElementById("scene");
+  if (scene) {
+    let index = 0;
+    const bubble = document.getElementById("chatBubble");
+    const dialogue = document.getElementById("dialogue");
+    const label = document.getElementById("sceneLabel");
+    const progress = document.getElementById("progressBar");
+    const next = document.getElementById("nextScene");
+    const restart = document.getElementById("restartStory");
+    function renderStory() {
+      const item = story[index];
+      bubble.textContent = item.bubble;
+      dialogue.textContent = item.text;
+      label.textContent = item.label;
+      progress.style.width = ((index + 1) / story.length * 100) + "%";
+      bubble.style.animation = "none";
+      void bubble.offsetWidth;
+      bubble.style.animation = "pop .35s ease-out";
+      next.textContent = index === story.length - 1 ? "Revoir l’histoire ↺" : "Scène suivante →";
+    }
+    next.addEventListener("click", () => { index = index === story.length - 1 ? 0 : index + 1; renderStory(); });
+    restart.addEventListener("click", () => { index = 0; renderStory(); });
+    renderStory();
+  }
+
+  const quiz = [
+    {q:"Un inconnu te demande ton mot de passe. Que fais-tu ?", a:["Je le lui donne","Je refuse et j’en parle à un adulte","Je le publie dans le chat"], correct:1, why:"Exact ! Un mot de passe doit rester secret."},
+    {q:"Tu reçois un lien étrange qui promet un cadeau. Que fais-tu ?", a:["Je clique vite","Je le partage à mes amis","Je ne clique pas et je vérifie la source"], correct:2, why:"Bien joué ! Les fausses offres peuvent être des arnaques."},
+    {q:"Quelqu’un se moque de toi en ligne à répétition. Que fais-tu ?", a:["Je garde les preuves et j’en parle à un adulte","Je réponds par des insultes","Je ne le dis à personne"], correct:0, why:"Oui ! Garde les preuves, bloque et signale le compte, puis demande de l’aide."},
+    {q:"Que faut-il partager avec un inconnu en ligne ?", a:["Mon adresse","Aucune information personnelle","Mon numéro de téléphone"], correct:1, why:"Correct ! Garde tes informations personnelles privées."},
+    {q:"Comment utiliser Internet de façon équilibrée ?", a:["Sans jamais faire de pause","En arrêtant de dormir pour jouer","En faisant des pauses et en gardant du temps pour d’autres activités"], correct:2, why:"Exact ! Le sommeil, les loisirs et les proches sont importants."}
+  ];
+  const qText = document.getElementById("questionText");
+  if (qText) {
+    let idx = 0, score = 0, answered = false, finished = false;
+    const answers = document.getElementById("answers");
+    const feedback = document.getElementById("feedback");
+    const count = document.getElementById("questionCount");
+    const bar = document.getElementById("quizProgress");
+    const scoreLabel = document.getElementById("scoreLabel");
+    const next = document.getElementById("quizNext");
+    const result = document.getElementById("quizResult");
+    function renderQuiz() {
+      answered = false; finished = false;
+      const item = quiz[idx];
+      count.textContent = `Question ${idx + 1} / ${quiz.length}`;
+      bar.style.width = (idx / quiz.length * 100) + "%";
+      qText.textContent = item.q;
+      feedback.textContent = "";
+      result.textContent = "";
+      answers.innerHTML = "";
+      next.disabled = true;
+      next.textContent = idx === quiz.length - 1 ? "Voir le résultat →" : "Suivant →";
+      item.a.forEach((answer, n) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "answer";
+        button.textContent = answer;
+        button.addEventListener("click", () => {
+          if (answered || finished) return;
+          answered = true;
+          [...answers.children].forEach((b, j) => {
+            b.disabled = true;
+            if (j === item.correct) b.classList.add("correct");
+          });
+          if (n === item.correct) { score++; feedback.textContent = item.why; }
+          else { button.classList.add("wrong"); feedback.textContent = "Pas tout à fait. " + item.why; }
+          scoreLabel.textContent = "Score : " + score;
+          bar.style.width = ((idx + 1) / quiz.length * 100) + "%";
+          next.disabled = false;
+        });
+        answers.appendChild(button);
+      });
+    }
+    next.addEventListener("click", () => {
+      if (finished) {
+        idx = 0; score = 0; scoreLabel.textContent = "Score : 0"; renderQuiz(); return;
+      }
+      if (!answered) return;
+      if (idx < quiz.length - 1) { idx++; renderQuiz(); }
+      else {
+        finished = true;
+        qText.textContent = `Tu as obtenu ${score} / ${quiz.length} !`;
+        answers.innerHTML = "";
+        feedback.textContent = score === quiz.length ? "Excellent ! Tu connais les bons réflexes de sécurité." : "Bravo d’avoir participé ! Relis les conseils et essaie encore.";
+        result.textContent = "";
+        next.textContent = "Recommencer le quiz";
+        next.disabled = false;
+      }
+    });
+    renderQuiz();
+  }
+});
+</script>
+</body>
+</html>
